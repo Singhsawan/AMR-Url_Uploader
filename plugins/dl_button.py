@@ -20,7 +20,7 @@ from PIL import Image
 from datetime import datetime
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
+    from plugins.config import Config
 else:
     from config import Config
 
