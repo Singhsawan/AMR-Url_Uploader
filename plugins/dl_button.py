@@ -21,8 +21,6 @@ from datetime import datetime
 
 if bool(os.environ.get("WEBHOOK", False)):
     from plugins.config import Config
-else:
-    from config import Config
 
 from translation import Translation
 
