@@ -16,9 +16,4 @@ async def start(bot, update):
     await update.reply_text(
         text=Translation.START_TEXT.format(update.from_user.mention),
         disable_web_page_preview=True,
-        reply_markup=Translation.START_BUTTONS
-    )
-
-@Client.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
-async def _broadcast(_, event: Message):
-    await broadcast_handler(event)
+        reply_markup=Translation.START_BUTTONS)
