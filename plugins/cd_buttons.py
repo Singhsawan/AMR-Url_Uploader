@@ -16,7 +16,6 @@ if bool(os.environ.get("WEBHOOK", False)):
 
 from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
-from plugins.broadcast import broadcast_handler
 from translation import Translation
 from pyrogram import Client, filters
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes
