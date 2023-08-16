@@ -1,45 +1,25 @@
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
 import os
-import time
-import psutil
-import shutil
-import string
-import asyncio
-from pyromod import listen
-from pyrogram import Client, filters
-from asyncio import TimeoutError
-from pyrogram.errors import MessageNotModified
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
-
 from plugins.config import Config
-from helpers.database.access_db import db
-from plugins.broadcast import broadcast_handler
-from helpers.database.add_user import AddUserToDatabase
 
-if bool(os.environ.get("WEBHOOK", False)):
-    from plugins.config import Config
-else:
-    from plugins.config import Config
+from pyrogram import Client as Ntbot
+from pyrogram import filters
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-from pyrogram import Client
 
 if __name__ == "__main__" :
     # create download directory, if not exist
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
-    plugins = dict(
-        root="plugins"
-    )
-ShreeBot = Client(
-        "URL Uploader",
-        bot_token=Config.TG_BOT_TOKEN,
-        api_id=Config.APP_ID,
+    plugins = dict(root="plugins")
+    Ntbot = Ntbot(
+        "Uploader Bot",
+        bot_token=Config.BOT_TOKEN,
+        api_id=Config.API_ID,
         api_hash=Config.API_HASH,
-        plugins=plugins
-    )
-
-
-@ShreeBot.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
-async def _broadcast(_, event: Message):
-    await broadcast_handler(event)
-
-ShreeBot.run()
+        plugins=plugins)
+    Ntbot.run()
