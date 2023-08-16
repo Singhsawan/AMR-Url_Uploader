@@ -143,6 +143,3 @@ async def button(bot, update):
     else:
         await update.message.delete()
         
-@Client.on_message(filters.private & filters.command("broadcast") & filters.user(config.BOT_OWNER) & filters.reply)
-async def _broadcast(_, event: Message):
-    await broadcast_handler(event)
