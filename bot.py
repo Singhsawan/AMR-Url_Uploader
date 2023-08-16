@@ -10,15 +10,15 @@ from asyncio import TimeoutError
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 
-from config import Config
+from plugins.config import Config
 from helpers.database.access_db import db
 from plugins.broadcast import broadcast_handler
 from helpers.database.add_user import AddUserToDatabase
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from config import Config
+    from plugins.config import Config
 else:
-    from config import Config
+    from plugins.config import Config
 
 from pyrogram import Client
 
