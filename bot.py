@@ -16,7 +16,7 @@ from plugins.broadcast import broadcast_handler
 from helpers.database.add_user import AddUserToDatabase
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
+    from config import Config
 else:
     from config import Config
 
