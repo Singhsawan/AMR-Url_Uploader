@@ -13,6 +13,8 @@ import time
 
 if bool(os.environ.get("WEBHOOK", False)):
     from plugins.config import Config
+else:
+    from plugins.config import Config
 
 from plugins.youtube_dl_button import youtube_dl_call_back
 from plugins.dl_button import ddl_call_back
