@@ -3,7 +3,7 @@ import os
 if bool(os.environ.get("WEBHOOK", False)):
     from plugins.config import Config
 else:
-    from plugins.config import Config
+    from sample_config import Config
 
 import threading
 
