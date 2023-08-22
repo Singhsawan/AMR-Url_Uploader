@@ -51,7 +51,7 @@ class Config(object):
     # watermark file
     DEF_WATER_MARK_FILE = ""
 
-     #Sql Database url
+    # Sql Database url
     DB_URI = os.environ.get("DATABASE_URL", "postgres://yzisfgoy:utrIpu6u0zL5CJNjCjVgK3IauT0RpWb4@rosie.db.elephantsql.com/yzisfgoy")
 
     # the download location, where the HTTP Server runs
