@@ -13,7 +13,7 @@ import time
 if bool(os.environ.get("WEBHOOK", False)):
     from plugins.config import Config
 else:
-    from plugins.config import Config
+    from sample_config import Config
 
 from datetime import datetime
 from hachoir.parser import createParser
