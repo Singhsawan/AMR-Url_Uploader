@@ -51,8 +51,8 @@ class Config(object):
     # watermark file
     DEF_WATER_MARK_FILE = ""
 
-    # Sql Database url
-    #DB_URI = os.environ.get("DATABASE_URL", "")
+     Sql Database url
+    DB_URI = os.environ.get("DATABASE_URL", "postgres://yzisfgoy:utrIpu6u0zL5CJNjCjVgK3IauT0RpWb4@rosie.db.elephantsql.com/yzisfgoy")
 
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = "./DOWNLOADS"
@@ -68,7 +68,7 @@ class Config(object):
     
     CAPTION = "Uploaded by @All_Movie_Rockers"
     
-    MONGODB_URI = os.environ.get("MONGODB_URI", "")
+   #MONGODB_URI = os.environ.get("MONGODB_URI", "")
     
     BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
     
