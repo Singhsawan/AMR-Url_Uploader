@@ -68,7 +68,7 @@ class Config(object):
     
     CAPTION = "Uploaded by @All_Movie_Rockers"
     
-   #MONGODB_URI = os.environ.get("MONGODB_URI", "")
+   MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb+srv://gareenaff3:lauda@cluster0.ycdzch5.mongodb.net/?retryWrites=true&w=majority")
     
     BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
     
